@@ -37,9 +37,9 @@ try {
   const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, reducedMotion: 'reduce', colorScheme: 'light' });
   await page.goto(baseUrl, { waitUntil: 'networkidle' });
   await page.evaluate(() => document.fonts.ready);
-  await page.addStyleTag({ content: '.scene-hint, .motion-toggle { visibility: hidden; }' });
+  await page.addStyleTag({ content: '.motion-toggle { visibility: hidden; }' });
   await page.waitForTimeout(1500);
-  await page.locator('#hero').screenshot({ path: out });
+  await page.locator('#water').screenshot({ path: out });
 } finally {
   await browser.close();
 }
