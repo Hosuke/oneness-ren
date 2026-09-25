@@ -128,7 +128,11 @@ export class WordCard {
     document.body.style.overflow = this.previousOverflow;
     for (const [child, inert] of this.inertBefore) child.inert = inert;
     this.release?.();
-    if (restore && this.invoker?.isConnected) this.invoker.focus({ preventScroll: true });
+    // A floating word lives in an aria-hidden layer: let focus rest instead of ringing it.
+    if (restore && this.invoker?.isConnected) {
+      if (this.invoker.closest('[aria-hidden="true"]')) document.activeElement?.blur();
+      else this.invoker.focus({ preventScroll: true });
+    }
     this.drag = null;
     this.touchStart = null;
   }

@@ -15,23 +15,6 @@ Google Fonts, with script-specific subsets requested only when needed.
 | Noto Serif | Copyright 2022 The Noto Project Authors. [Latin, Greek and Cyrillic](https://github.com/notofonts/latin-greek-cyrillic) | [OFL](https://github.com/google/fonts/blob/main/ofl/notoserif/OFL.txt) |
 | Noto Serif KR | Copyright 2012 Google Inc. All Rights Reserved. [Noto CJK](https://github.com/notofonts/noto-cjk) | [OFL](https://github.com/google/fonts/blob/main/ofl/notoserifkr/OFL.txt) |
 
-## 字形衍生 · Derived glyph outlines
-
-`js/glyph.js` contains the U+4EC1 仁 outline extracted from **LXGW WenKai TC
-Regular v1.522**, then separated by contour bounds into the 亻 and 二 components,
-flipped vertically and normalized into an SVG viewBox. The outline data retain
-the SIL OFL 1.1 license and the upstream notices below; they are excluded from
-the site's CC BY-NC-SA 4.0 license.
-
-Copyright 2022–2026 LXGW (https://github.com/lxgw/LxgwWenkaiTC)  
-Copyright 2020 The Klee Project Authors (https://github.com/fontworks-fonts/Klee)
-
-Release: <https://github.com/lxgw/LxgwWenkaiTC/releases/tag/v1.522>  
-Font: `LXGWWenKaiTC-Regular.ttf`, Version 1.522; March 17, 2026.  
-Reproduction: run `tools/extract-glyph.py` against the cached release TTF; the
-generated file records the font's SHA-256 digest. No font binary or build
-dependency is installed in the repository.
-
 ## SIL Open Font License 1.1 — full text
 
 -----------------------------------------------------------

@@ -29,95 +29,31 @@
   <script type="module" src="js/main.js"></script>
 </head>
 <body data-page="home">
-  <a class="skip-link" href="#chapter-1">讀正文 · <span lang="en">Read the chapters</span></a>
   <section class="sr-only entry-access" aria-label="詞條 · Entries">
     <h2>詞條 · <span lang="en">Entries</span></h2>
     <ul id="entry-list"></ul>
   </section>
   <main>
-    <section id="hero" class="float-scene hero" aria-label="沉石 · The submerged stone">
-      <svg class="stone" viewBox="0 0 1000 1000" aria-hidden="true"><text x="500" y="500" dy=".34em" text-anchor="middle">仁</text></svg>
-      <svg class="stone-glow" viewBox="0 0 1000 1000" aria-hidden="true"><line x1="270" y1="805" x2="750" y2="805" vector-effect="non-scaling-stroke"/></svg>
-      <canvas class="threads" aria-hidden="true"></canvas>
+    <section id="water" class="water" aria-label="仁 · 二人">
+      <h1 class="sr-only">仁 · 二人 <span lang="en">— Rén: two people</span></h1>
+      <canvas class="depth" aria-hidden="true"></canvas>
+      <canvas class="surface" aria-hidden="true"></canvas>
       <div class="floats" aria-hidden="true"></div>
-      <div class="scene-caption hero-caption">
-        <h1>仁 · 二人</h1>
-        <p lang="en" class="en">Two walk together.</p>
-        <p class="scene-hint">點任一字，見其出處 <span class="en" lang="en">· Tap any word to see its source.</span></p>
-        <button type="button" class="motion-toggle" aria-pressed="false"><span class="zh">靜</span> · <span class="en" lang="en">still</span></button>
-      </div>
-      <noscript><p class="no-script">請啟用 JavaScript 以見浮字與出處。<span lang="en">Enable JavaScript to explore the words and their sources.</span></p></noscript>
-    </section>
-
-    <section id="chapter-1" class="chapter" aria-labelledby="chapter-1-title">
-      <div class="chapter-visual" aria-hidden="true"></div>
-      <div class="chapter-copy">
-        <p class="chapter-number" aria-hidden="true">一</p>
-        <h2 id="chapter-1-title">从人从二<span class="en" lang="en">Person and two</span></h2>
-        <blockquote>
-          <p>「仁，親也。从人从二。」</p>
-          <cite>— 許慎《說文解字》</cite>
-          <p class="en" lang="en">“Rén: closeness. From ‘person’ and ‘two’.”<br>— Shuowen Jiezi</p>
-        </blockquote>
-        <blockquote>
-          <p>「樊遲問仁。子曰：愛人。」</p>
-          <cite>— 《論語·顏淵》</cite>
-          <p class="en" lang="en">“Fan Chi asked about rén. The Master said: ‘Love others.’”<br>— Analects 12.22</p>
-        </blockquote>
-        <p class="chapter-thought">仁不在一個人身上，在兩個人之間。<span class="en" lang="en">Rén is not in one person; it is between two.</span></p>
-        <p class="chapter-reference"><a href="https://zh.wikisource.org/wiki/說文解字/08" target="_blank" rel="noopener">說文 <span lang="en">Shuowen</span></a><span aria-hidden="true"> · </span><a href="https://zh.wikisource.org/wiki/論語/顏淵第十二" target="_blank" rel="noopener">論語 <span lang="en">Analects</span></a></p>
-      </div>
-    </section>
-
-    <section id="chapter-2" class="chapter" aria-labelledby="chapter-2-title">
-      <div class="chapter-visual" aria-hidden="true"></div>
-      <div class="chapter-copy">
-        <p class="chapter-number" aria-hidden="true">二</p>
-        <h2 id="chapter-2-title">同行二人<span class="en" lang="en">Dōgyō ninin</span></h2>
-        <p>四國八十八所，一條千餘公里的環行之路。遍路者（<span lang="ja">お遍路さん</span>）披白衣、戴菅笠。白衣原是死裝束——上路之時，已將此身放下。</p>
-        <p class="en" lang="en">Eighty-eight temples on a circuit of more than a thousand kilometres around Shikoku. Pilgrims wear white and a sedge hat. The white robe was once a burial garment: setting out, one has already let this life go.</p>
-        <p>笠上寫著「同行二人」：一人上路，弘法大師空海始終相伴。手中的金剛杖，被視為大師的化身。</p>
-        <p class="en" lang="en">On the hat: dōgyō ninin, “two travelling together.” Walking alone, one walks with Kōbō Daishi Kūkai. The staff in one’s hand is regarded as the Daishi himself.</p>
-        <p class="chapter-thought">一人上路，從來是兩個人。<span class="en" lang="en">One sets out alone, and is always two.</span></p>
-        <p class="chapter-reference">參考 <span lang="en">Sources</span> · <a href="https://shikoku-tourism.com/en/shikoku-henro/shikoku-henro" target="_blank" rel="noopener">四國 <span lang="en">Shikoku</span></a> · <a href="https://byodoji.online/articles/shikoku88/ohenro" target="_blank" rel="noopener">平等寺 <span lang="en">Byōdōji</span></a></p>
-      </div>
-    </section>
-
-    <section id="chapter-3" class="chapter" aria-labelledby="chapter-3-title">
-      <div class="chapter-visual" aria-hidden="true"></div>
-      <div class="chapter-copy">
-        <p class="chapter-number" aria-hidden="true">三</p>
-        <h2 id="chapter-3-title">倒轉巴別<span class="en" lang="en">Babel, reversed</span></h2>
-        <blockquote>
-          <p>「那時，天下人的口音、言語都是一樣。」</p>
-          <cite>— 創世記 11:1，和合本</cite>
-          <p class="en" lang="en">“And the whole earth was of one language, and of one speech.”<br>— Genesis 11:1, KJV</p>
-        </blockquote>
-        <blockquote>
-          <p>「因為耶和華在那裡變亂天下人的言語，使眾人分散在全地上，所以那城名叫巴別。」</p>
-          <cite>— 創世記 11:9，和合本</cite>
-          <p class="en" lang="en">“Therefore is the name of it called Babel; because the Lord did there confound the language of all the earth: and from thence did the Lord scatter them abroad upon the face of all the earth.”<br>— Genesis 11:9, KJV</p>
-        </blockquote>
-        <p class="chapter-thought">不是回到同一種語言，<br>是每一種語言都指向同一件事。<span class="en" lang="en">Not a return to one language — every language pointing to the same thing.</span></p>
-      </div>
-    </section>
-
-    <section id="closing" class="float-scene closing" aria-label="同行 · Walking together">
-      <svg class="stone" viewBox="0 0 1000 1000" aria-hidden="true"><text x="500" y="500" dy=".34em" text-anchor="middle">仁</text></svg>
-      <svg class="stone-glow" viewBox="0 0 1000 1000" aria-hidden="true"><line x1="270" y1="805" x2="750" y2="805" vector-effect="non-scaling-stroke"/></svg>
-      <canvas class="threads" aria-hidden="true"></canvas>
-      <div class="floats" aria-hidden="true"></div>
-      <footer class="scene-caption closing-caption">
-        <p class="closing-line">同行二人 <span class="en" lang="en">· Dōgyō Ninin · Two walk together</span></p>
-        <span class="seal" aria-label="仁 · Rén">仁</span>
-        <nav class="footer-links" aria-label="延伸閱讀 · Further reading">
-          <a href="https://hosuke.github.io/mandala/">金胎不二 · 兩部曼荼羅<span class="en" lang="en">The two mandalas</span></a>
-          <a href="sources.html">詞條出處<span class="en" lang="en">Sources</span></a>
-          <a href="https://github.com/Hosuke/oneness-ren/blob/main/LICENSE">許可<span class="en" lang="en">License</span></a>
-          <a href="https://github.com/Hosuke/oneness-ren">原始碼<span class="en" lang="en">GitHub</span></a>
-        </nav>
-      </footer>
+      <button type="button" class="motion-toggle" aria-pressed="false" aria-label="靜 · still"><span aria-hidden="true">靜</span></button>
+      <a class="seal" href="#below" aria-label="卷末 · below">仁</a>
+      <noscript><p class="no-script">仁 · 二人</p></noscript>
     </section>
   </main>
+  <footer id="below" class="below">
+    <p class="below-line">同行二人 <span class="en" lang="en">· Dōgyō ninin · Two walk together</span></p>
+    <p class="below-quote">仁，親也。从人从二。<span class="en" lang="en">Rén: closeness. From “person” and “two.” — Shuowen Jiezi</span></p>
+    <nav class="below-links" aria-label="行履 · Paths">
+      <a href="sources.html">詞條出處<span class="en" lang="en">Sources</span></a>
+      <a href="https://siwen.ink/">斯文<span class="en" lang="en">Siwen</span></a>
+      <a href="https://taixu.ink/">太虛間<span class="en" lang="en">Taixu</span></a>
+      <a href="https://hosuke.github.io/mandala/">兩部曼荼羅<span class="en" lang="en">Mandala</span></a>
+      <a href="https://github.com/Hosuke/oneness-ren">原始碼<span class="en" lang="en">GitHub</span></a>
+    </nav>
+  </footer>
 </body>
 </html>

@@ -1,8 +1,7 @@
 import { WORDS } from '../data/words.js';
-import { FloatScene, makePaper } from './float.js';
+import { WaterScene, makePaper } from './water.js';
 import { WordCard } from './card.js';
 import { loadFonts } from './fonts.js';
-import { initChapters } from './chapters.js';
 import { RELATIONS, bilingual, element, original, relationTag, sourceList } from './entries.js';
 
 function renderSources() {
@@ -42,37 +41,28 @@ function bootScenes() {
   let chosenStill = null;
   try { chosenStill = JSON.parse(localStorage.getItem('oneness.still')); } catch { /* storage unavailable */ }
   const isStill = () => typeof chosenStill === 'boolean' ? chosenStill : motion.matches;
-  const onSelect = (entry, invoker, release) => card.open(entry, invoker, release);
-  const scenes = [
-    new FloatScene(document.querySelector('#hero'), { words: WORDS, onSelect, intro: !isStill(), reduced: isStill() }),
-    new FloatScene(document.querySelector('#closing'), { words: WORDS, onSelect, intro: false, calm: true, reduced: isStill() }),
-  ];
-  const chapters = initChapters({ words: WORDS, reducedMotion: isStill() });
+  const water = new WaterScene(document.querySelector('#water'), {
+    words: WORDS, reduced: isStill(),
+    onSelect: (entry, invoker, release) => card.open(entry, invoker, release),
+  });
   const updateMotion = () => {
     const still = isStill();
     document.documentElement.classList.toggle('is-still', still);
-    scenes.forEach(scene => scene.setReducedMotion(still));
-    chapters.setReducedMotion(still);
-    if (toggle) {
-      toggle.setAttribute('aria-pressed', String(still));
-    }
+    water.setReducedMotion(still);
+    toggle?.setAttribute('aria-pressed', String(still));
   };
   motion.addEventListener('change', () => {
     chosenStill = null;
     try { localStorage.removeItem('oneness.still'); } catch { /* storage unavailable */ }
     updateMotion();
   });
-  toggle?.addEventListener('click', () => {
+  toggle?.addEventListener('click', event => {
+    event.stopPropagation();
     chosenStill = !isStill();
     try { localStorage.setItem('oneness.still', JSON.stringify(chosenStill)); } catch { /* storage unavailable */ }
     updateMotion();
   });
   updateMotion();
-  document.addEventListener('visibilitychange', () => {
-    scenes.forEach(scene => scene.setDocumentVisible(!document.hidden));
-  });
-  // Browsers can restore a page from bfcache with no new DOMContentLoaded event.
-  window.addEventListener('pageshow', () => scenes.forEach(scene => scene.setDocumentVisible(!document.hidden)));
 }
 
 // One paper for the whole page, so no section edge shows a seam.
