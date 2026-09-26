@@ -53,7 +53,7 @@
 
 ## 五、部署
 
-- 現在：GitHub Pages 項目站 `https://hosuke.github.io/oneness-ren/`（全站相對路徑，可兼容前綴與日後域根）。
+- 2026-09-27 已接域：`https://oneness.ren/`（GitHub Pages + Cloudflare DNS-only；舊址 hosuke.github.io/oneness-ren/ 自動轉址）。
 - 接域時（主人動手或明授後）：
   - 倉庫加 `CNAME`（`oneness.ren`），Pages 設 custom domain，憑證就緒後強制 HTTPS；同步把 canonical / og / sitemap / feed 改回 `https://oneness.ren/`。
   - Cloudflare DNS（先 DNS-only，不開代理）：
